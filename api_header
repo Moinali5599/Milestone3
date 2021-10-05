@@ -1,0 +1,8 @@
+BasicHeader:
+  postUser:
+    accept: "application/json"
+    Content-Type: "application/json"
+  
+Bundle:
+  postUser:
+   accept: "application/json"
