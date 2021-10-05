@@ -1,0 +1,32 @@
+package com.cbre.steps.api;
+
+import com.cbre.webservice.commons.ApiActions;
+
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+
+
+public class PostUserStepDefinitions {
+	
+	ApiActions api =null;
+
+	@Given("I have {string}, {string}, {string} and {string}")
+	public void i_have_https_reqres_in_api_users_milestone3_postUser_and(String url, String uri, String headers, String queryparams) {
+		api = new ApiActions(url,uri,headers,queryparams);
+	}
+
+	@When("I send a resquest with {string} and {string}")
+	public void i_send_a_resquest_with_POST_and_PostUser_postUser_Payload(String http_method, String payload) {
+		api.send(http_method, payload);
+	}
+
+	@Then("Response should contain {string} and {string}")
+	public void response_should_contain_PostUser_postUser_Validation_and(String validation, String status_code) {
+		api.validateResponse(validation, status_code);
+	}
+	
+	
+
+}
